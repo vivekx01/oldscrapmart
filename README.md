@@ -20,6 +20,8 @@ Screenshots of the project:
 
 ![7](https://user-images.githubusercontent.com/72996825/119179253-56d63a00-ba8c-11eb-83d2-c109c09e0857.PNG)
 
+![8](https://user-images.githubusercontent.com/72996825/119179630-c77d5680-ba8c-11eb-86d6-c2fdd73e3c0c.PNG)
+
 ![9](https://user-images.githubusercontent.com/72996825/119179255-576ed080-ba8c-11eb-9987-15ec04e14d07.PNG)
 
 ![10](https://user-images.githubusercontent.com/72996825/119179258-576ed080-ba8c-11eb-9fac-14e6b6faef57.PNG)
