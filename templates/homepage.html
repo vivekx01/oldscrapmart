@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="{% static 'img/slogo.png' %}" alt="" width="45" height="35" class="d-inline-block align-text-top">
+            Scrapmart
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search/">Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/getlisted/">Get Listed</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/faq/">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contactus/">Contact Us</a>
+                </li>
+            </ul>
+            <a href="/userlogin/" class="btn btn-primary" style="margin-right: 10px;">Login</a>
+            <a href="/usersignup/" class="btn btn-success">Signup</a>
+        </div>
+    </div>
+</nav>
+
+<div class="card text-center" style="background-image: url('{% static "img/bg1.jpeg" %}');background-size:cover;height:550px;">
+    <div class="card-body" style="height:400px; color:white ; margin-top:60px; font-family: sans-serif; font-size:larger;">
+        <img src="{% static 'img/bg3.png' %}" class="img-fluid" style="height: 180px;width:280px;">
+        <p class="card-text">SCRAPMART IS THE BEST PLACE TO FIND THE NEAREST SCRAP DEALER AND GET RID OF UNWANTED
+            ELECTRONIC,METAL OR PAPER SCRAP!</p>
+        <a href="/usersignup/" class="btn btn-light btn-lg">Signup</a>
+        <a href="/userlogin/" class="btn btn-light  btn-lg">Login</a>
+
+    </div>
+</div>
+
+<main class="main" style="margin-top:-20px;">
+    <section class="how-works" id="HowItWorks">
+        <h2 class="how-works-heading">
+            Scrapmart works in four simple steps
+        </h2>
+        <!-- first  search-->
+        <div class="how-works-content">
+            <figure>
+                <img src="{% static 'img/Searching.png' %}" alt="search">
+            </figure>
+            <h3 class="how-works-heading-tertiary">
+                1-Create an Account:
+            </h3>
+            <p class="how-works-para">
+                It is simple. From the above buttons just click on the Sign Up button,Enter the required details and
+                Boom!
+                Your Scrapmart account is created!
+            </p>
+        </div>
+        <!-- second locate -->
+        <div class="how-works-content">
+            <figure>
+                <img src="{% static 'img/Landing-Success.png' %}" alt="find">
+            </figure>
+            <h3 class="how-works-heading-tertiary">
+                2-Login:
+            </h3>
+            <p class="how-works-para">
+                After getting your account created, just click on the login button from the homepage or from side bar.
+                Then enter your username and password and you will be logged into your account.
+            </p>
+        </div>
+        <!-- third apply -->
+        <div class="how-works-content">
+            <figure>
+                <img src="{% static 'img/Folder-Data.png' %}" alt="search">
+            </figure>
+            <h3 class="how-works-heading-tertiary">
+                3-SEARCH:
+            </h3>
+            <p class="how-works-para">
+                click on the Search button from the Userhomepage Dashboard and search for Scrap dealers
+                by choosing your City and locality. Click on view profile to get shop address and contact details.
+            </p>
+        </div>
+        <!-- fourth done -->
+        <div class="how-works-content">
+            <figure>
+                <img src="{% static 'img/Launching.png' %}" alt="search">
+            </figure>
+            <h3 class="how-works-heading-tertiary">
+                4-DONE:
+            </h3>
+            <p class="how-works-para">
+                Connect/Contact with desired Scrap Dealer and fix a meet!
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer class="container">
+    <p class="float-end"></p>
+    <p style="text-align: center;">© 2020–2021 Scrapmart, Inc.</p>
+</footer>
+{% endblock %}

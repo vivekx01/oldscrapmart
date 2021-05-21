@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/admin/homepage/">
+                <img src="{% static 'img/slogo.png' %}" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                Scrapmart
+            </a>
+            <a href="/admin/logout/" class="btn btn-danger">Logout</a>
+        </div>
+    </nav>
+    {% for message in messages %}
+    <div class="alert alert-dark" role="alert">
+        {{message}}
+    </div>
+    {% endfor %}
+    <div style="display:block; margin:auto; width: 530px;margin-top:20px" class="container">
+        <form method="POST" action="/addlocation/">
+            {% csrf_token %}
+            <h2 style="text-align: center;">Add Location</h2>
+            <input type="text" class="form-control" placeholder="City" name="city"
+                style="width: 200px; display:inline; margin:auto">
+            <input type="text" class="form-control" placeholder="Locality" name="locality"
+                style="width: 200px; display:inline; margin:auto">
+            <input type="submit" value="Add to Database" class="btn btn-dark" style="display:block;margin-top: -38px;margin-left:420px">
+        </form>
+        
+    </div>
+    <div class="container" style="width: 100%; display:block; margin:auto; margin-top: 80px">
+        <table style="width: 70%">
+            <tr>
+                <th>Cities</th>
+            </tr>
+            
+            <tr>
+                {% for city in cities %}
+                <td>{{city.name}}</td>
+                <td><a href="/deletecity/{{city.id}}/" class="btn btn-danger">Delete</a></td>
+                {% endfor %}
+    
+            </tr>
+            <tr>
+                <th>Localities</th>
+            </tr>
+            
+            <tr>
+                {% for locality in localities %}
+                <td>{{locality.name}}</td>
+                <td><a href="/deletelocality/{{locality.id}}/" class="btn btn-danger">Delete</a></td>
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+
+    <footer class="container" style="margin-top: 80px;">
+        <p class="float-end"></p>
+        <p style="text-align: center;">© 2020–2021 Scrapmart, Inc.</p>
+    </footer>
+
+{% endblock %}

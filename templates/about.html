@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="{% static 'img/slogo.png' %}" alt="" width="45" height="35" class="d-inline-block align-text-top">
+            Scrapmart
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search/">Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/getlisted/">Get Listed</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/faq/">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contactus/">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="card text-center">
+    <div class="card-body">
+        <h1 class="card-title">Project Vision</h1>
+        <p class="card-text" style="margin-top: 30px;">Scrapmart is an effort to encourage local scrap businesses.</p>
+        <p class="card-text">Apart from providing a platform for searching local scrap dealers</p>
+        <p class="card-text">It also encourages recycling of scrap materials as an effort to save the environment :)</p>
+
+        <h1>Technologies Used</h1>
+        <p class="card-text" style="margin-top: 30px;">
+            <img src="{% static 'img/django.png' %}" class="img-fluid" style="height: 70px;width:70px;">
+            <img src="{% static 'img/python.png' %}" class="img-fluid" style="height: 70px;width:70px;">
+            <img src="{% static 'img/bootstrap.png' %}" class="img-fluid" style="height: 70px;width:70px;">
+            <img src="{% static 'img/html.png' %}" class="img-fluid" style="height: 70px;width:70px;">
+            <img src="{% static 'img/css.png' %}" class="img-fluid" style="height: 70px;width:70px;">
+            <img src="{% static 'img/js.png' %}" class="img-fluid" style="height: 70px;width:70px;">
+        </p>
+        <p class="card-text" style="margin-top: 30px;">
+            <img src="{% static 'img/postgres.png' %}" class="img-fluid" style="height: 70px;width:150px;">
+        </p>
+
+        <h1 style="margin-top: 30px;">About the developer</h1>
+        <p class="card-text" style="margin-top: 30px;">
+            <img src="{% static 'img/git.png' %}" class="img-fluid" style="height: 100px;width:100px;">
+        <h3>vivekx01</h3>
+        <a href="https://github.com/vivekx01" class="btn btn-dark">View Github Account</a>
+        </p>
+    </div>
+    <div class="card-footer text-muted">
+        <p style="text-align: center;">© 2020–2021 Scrapmart, Inc.</p>
+    </div>
+</div>
+
+{% endblock %}

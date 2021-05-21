@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/admin/homepage/">
+                <img src="{% static 'img/slogo.png' %}" alt="" width="30" height="24"
+                    class="d-inline-block align-text-top">
+                Scrapmart
+            </a>
+            <a href="/admin/logout/" class="btn btn-danger">Logout</a>
+        </div>
+    </nav>
+
+    {% for message in messages %}
+    <div class="alert alert-info" role="alert">
+        {{message}}
+    </div>
+    {% endfor %}
+
+
+    <div class="card text-center">
+        <div class="card-body">
+            <h1 class="card-title">Admin Panel</h1>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Listing Requests</h5>
+                            <img src="{% static 'img/listingrequests.png' %}" class="img-fluid" style="height: 150px;width:150px;">
+                            <p class="card-text">View Shop Listing Requests </p>
+                            <a href="/admin/listingrequests/" class="btn btn-dark btn-lg">View requests</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Add a manual listing</h5>
+                            <img src="{% static 'img/addshop.png' %}" class="img-fluid" style="height: 150px;width:150px;">
+                            <p class="card-text">Add a shop manually to the search database</p>
+                            <a href="/admin/addshop/" class="btn btn-dark btn-lg">Add a shop</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Add/Delete Locations</h5>
+                            <img src="{% static 'img/location.png' %}" class="img-fluid" style="height: 150px;width:150px;">
+                            <p class="card-text">Add a new city/locality to the search database</p>
+                            <a href="/admin/locations/" class="btn btn-dark btn-lg">Add Location</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">User queries</h5>
+                            <img src="{% static 'img/query.png' %}" class="img-fluid" style="height: 150px;width:150px;">
+                            <p class="card-text">View Contact queries by users</p>
+                            <a href="/admin/userqueries/" class="btn btn-dark btn-lg">Show Queries</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container" style="margin-top: 80px;">
+        <p class="float-end"></p>
+        <p style="text-align: center;">© 2020–2021 Scrapmart, Inc.</p>
+    </footer>
+{% endblock %}

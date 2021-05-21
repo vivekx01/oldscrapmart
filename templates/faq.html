@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="{% static 'img/slogo.png' %}" alt="" width="45" height="35" class="d-inline-block align-text-top">
+            Scrapmart
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search/">Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/getlisted/">Get Listed</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/faq/">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contactus/">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="card text-center">
+    <div class="card-body">
+        <h1 class="card-title">Frequently Asked Questions</h1>
+        <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">What does this site actually do?</h5>
+                <p class="card-text">This site provides information about scrap dealers based on city and locality you search in.You can search for scrap dealers around you if you wish to sell any kind of scrap materials like paper,electronics,metals,etc</p>
+            </div>
+        </div>
+        <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">How do I search for Scrap Dealers in my locality using Scrapmart?</h5>
+                <p class="card-text">In order to search for scrap dealers, you need to first create and account on scrapmart and then you can access search console after loging into your account</p>
+            </div>
+        </div>
+        <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">How do I get in touch with the Scrap dealer?</h5>
+                <p class="card-text">You can either directly go to the shop using Shop Address provided or contact the dealer using Phone number provided.</p>
+            </div>
+        </div>
+        <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">I am a Scrap dealer and I wish to list my shop on Scrapmart. How do I get listed?</h5>
+                <p class="card-text">First of all create an account on Scrapmart. After you login into your account, you will see an option to apply for getting listed on scrapmart.Just Fill the required details wait for our team to approve your listing.</p>
+            </div>
+        </div>
+        <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">I have applied for listing my shop on Scrapmart. How will I know if my request is Approved or not?</h5>
+                <p class="card-text">When you login in to your account, There is a section which shows the status of your Listing request. You can check there if your request has been approved or not</p>
+            </div>
+        </div>
+        <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">I have some queries/issues related to using Scrapmart, How do I contact/get in Touch with the team?</h5>
+                <p class="card-text">You can just hover to the Contact Us tab and submit your queries over there by filling a form. We will get in touch with you as soon as possible :)</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-muted">
+        <p style="text-align: center;">© 2020–2021 Scrapmart, Inc.</p>
+    </div>
+</div>
+
+{% endblock %}

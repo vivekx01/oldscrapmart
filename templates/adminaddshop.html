@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<script>
+    $(document).ready(function () {
+        $('select#selectcities').change(function () {
+            var optionSelected = $(this).find("option:selected");
+            var valueSelected = optionSelected.val();
+            var city_name = optionSelected.text();
+
+
+            data = { 'cnt': city_name };
+            ajax('/getdetails', data, function (result) {
+
+                console.log(result);
+                $("#selectlocalities option").remove();
+                for (var i = result.length - 1; i >= 0; i--) {
+                    $("#selectlocalities").append('<option>' + result[i].name + '</option>');
+                };
+
+
+            });
+        });
+    });
+</script>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/admin/homepage/">
+            <img src="{% static 'img/slogo.png' %}" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            Scrapmart
+        </a>
+        <a href="/admin/logout/" class="btn btn-danger">Logout</a>
+    </div>
+</nav>
+{% for message in messages %}
+<div class="alert alert-dark" role="alert">
+    {{message}}
+</div>
+{% endfor %}
+<h1 style="text-align: center;margin-top:20px">Add a Shop to the database</h1>
+
+<div class="container" style="width: 60%; margin-top: 50px">
+
+    <form method="POST" action="/admin/addshop/submit/" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Username of the profile</label>
+            <input type="text" name="username" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Shop Name</label>
+            <input type="text" name="shopname" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Shop Address</label>
+            <textarea class="form-control" name="shopaddress" id="exampleFormControlTextarea1" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Shop Contact</label>
+            <input type="text" name="shopcontact" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Shop Image</label>
+            <input type="file" name="img" accept="image/*" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Select City</label>
+            <select name="selectcities" id="selectcities" class="form-select" aria-label="Default select example" required>
+                <option selected>Select City</option>
+                {% for item in cities %}
+                <option val="{{ item.name }}">{{item.name}}</option>
+                {% endfor %}
+            </select>    
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Select Locality</label>
+            <select name="selectlocalities" id="selectlocalities" class="form-select" aria-label="Default select example" required>
+                <option selected>Select Locality</option>
+            </select>
+        </div>
+        <button type="submit" style="display:block; margin:auto" class="btn btn-dark btn-lg">Add to Search Database</button>
+    </form>
+</div>
+
+
+<footer class="container" style="margin-top: 120px;">
+    <p class="float-end"></p>
+    <p style="text-align: center;">© 2020–2021 Scrapmart, Inc.</p>
+</footer>
+{% endblock %}

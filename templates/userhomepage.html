@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/user/homepage/">
+            <img src="{% static 'img/slogo.png' %}" alt="" width="45" height="35" class="d-inline-block align-text-top">
+            Scrapmart
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/user/homepage/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search/">Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/getlisted/">Get Listed</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/faq/">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contactus/">Contact Us</a>
+                </li>
+            </ul>
+            <a href="/user/logout/" class="btn btn-danger">Logout</a>
+        </div>
+    </div>
+</nav>
+{% for message in messages %}
+<div class="alert alert-success" role="alert">
+    {{message}}
+</div>
+{% endfor %}
+
+<div class="card text-center">
+    <div class="card-body">
+        <h1 class="card-title">Welcome {{username}} !</h1>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Search</h5>
+                        <img src="{% static 'img/search.png' %}" class="img-fluid" style="height: 150px;width:150px;">
+                        <p class="card-text">Click Here to Search for Shops near you</p>
+                        <a href="/search/" class="btn btn-dark btn-lg">Search</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Your Profile</h5>
+                        <img src="{% static 'img/profile.png' %}" class="img-fluid" style="height: 150px;width:150px;">
+                        <p class="card-text">Click here to View Your Profile</p>
+                        <a href="/user/profile/" class="btn btn-dark btn-lg">View Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Get Listed</h5>
+                        <img src="{% static 'img/listing.png' %}" class="img-fluid" style="height: 150px;width:150px;">
+                        <p class="card-text">Scrap Dealer? Click Here to List here shop on Scrapmart</p>
+                        <a href="/user/getlisted/" class="btn btn-dark btn-lg">Apply for Listing</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Listing Status</h5>
+                        <img src="{% static 'img/status.png' %}" class="img-fluid" style="height: 150px;width:150px;">
+                        <p class="card-text">Check your Shop Listing Status</p>
+                        <a href="/user/getlisted/status/" class="btn btn-dark btn-lg">Check Status</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="container" style="margin-top: 80px;">
+    <p class="float-end"></p>
+    <p style="text-align: center;">© 2020–2021 Scrapmart, Inc.</p>
+</footer>
+{% endblock %}

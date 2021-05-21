@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/admin/">
+                <img src="{% static 'img/slogo.png' %}" alt="" width="30" height="24"
+                    class="d-inline-block align-text-top">
+                Scrapmart
+            </a>
+        </div>
+    </nav>
+
+    {% for message in messages %}
+    <div class="alert alert-dark" role="alert">
+        {{message}}
+    </div>
+    {% endfor %}
+
+    <div class="container" style="width: 40%; margin-top: 20px">
+        <img class="img-fluid" src="{% static 'img/slogo.png' %}" style="width: 120px; height: 100px;margin-left:190px">
+        <h1 style="text-align: center;">Admin Login</h1>
+        <form action="/authenticateadmin/" method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" style="display:block; margin:auto" class="btn btn-dark btn-lg">Login</button>
+        </form>
+    </div>
+
+    <footer class="container" style="margin-top: 130px;">
+        <p class="float-end"></p>
+        <p style="text-align: center;">© 2020–2021 Scrapmart, Inc.</p>
+    </footer>
+    
+{% endblock %}
