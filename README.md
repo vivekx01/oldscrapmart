@@ -1,7 +1,8 @@
 # Scrapmart
 
 Technologies used:
-Django framework,Python,Bootstrap (HTML/CSS/JS) and Postgresql
+Django framework,Python,Bootstrap (HTML/CSS/JS) and Postgresql(Backend).
+
 As the Front end is built on Bootstrap, the web application is fully responsive and can adjust sizes according to the viewing device
 
 Screenshots of the project:
