@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '@_l=j9i8&!)zi)0le!iq^um5ndgph8-ke-zs2=41#(-kj02+v+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['testscrapmart.herokuapp.com',
 'localhost:8000']
